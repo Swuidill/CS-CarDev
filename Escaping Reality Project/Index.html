@@ -1,0 +1,956 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.1.0/dist/aframe-extras.min.js"></script>
+    <script src="script.js"></script>
+    <script src="kinema.js"></script>
+    <script src="zombie.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene physics="gravity: 0 -9.8 0; debug: true">   
+      <a-assets>
+        <a-asset_item id="Zombie" src="zombie/scene.gltf"></a-asset_item>
+      </a-assets>
+      <a-plane static-body position="0 0 -4" rotation="-90   0 0" side="double" width="500" height="500" color="#7BC8A4"></a-plane>
+
+
+
+
+<!-- House -->
+<a-entity class="room1" scale = "7 5 5" position = "0 0 -150">
+  <a-entity class="wall">
+      <a-box src="#wood" width="2" height="1" depth="0.1" position="-2 0.5 0" ></a-box>
+      <a-box src="#wood" width="2" height="1" depth="0.1" position="-2 1.5 0" ></a-box>
+      <a-box src="#wood" width="2" height="1" depth="0.1" position="-2 2.5 0" ></a-box>
+
+      <a-box src="#wood" width="2" height="1" depth="0.1" position="2 0.5 0" ></a-box>
+      <a-box src="#wood" width="2" height="1" depth="0.1" position="2 1.5 0" ></a-box>
+      <a-box src="#wood" width="2" height="1" depth="0.1" position="2 2.5 0" ></a-box>
+
+      <a-box src="#wood" width="2" height="0.5" depth="0.1" position="0 2.75 0" ></a-box>
+  </a-entity>
+
+  <a-entity class="wall" rotation="0 90 0" position="3 0 -3">
+      <a-box src="#wood" width="2" height="1" depth="0.1" position="-2 0.5 0" ></a-box>
+      <a-box src="#wood" width="2" height="1" depth="0.1" position="-2 1.5 0" ></a-box>
+      <a-box src="#wood" width="2" height="1" depth="0.1" position="-2 2.5 0" ></a-box>
+
+      <a-box src="#wood" width="2" height="1" depth="0.1" position="2 0.5 0" ></a-box>
+      <a-box src="#wood" width="2" height="1" depth="0.1" position="2 1.5 0" ></a-box>
+      <a-box src="#wood" width="2" height="1" depth="0.1" position="2 2.5 0" ></a-box>
+
+      <a-box src="#wood" width="2" height="1" depth="0.1" position="0 0.5 0" ></a-box>
+      <a-box src="#wood" width="2" height="1" depth="0.1" position="0 2.5 0" ></a-box>
+      <a-box width="2" height="1" depth="0.1" color="blue" opacity="0.2" position="0 1.5 0" ></a-box>
+  </a-entity>
+  <a-entity class="wall" rotation="0 90 0" position="-3 0 -3">
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="-2 0.5 0" ></a-box>
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="-2 1.5 0" ></a-box>
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="-2 2.5 0" ></a-box>
+
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="2 0.5 0" ></a-box>
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="2 1.5 0" ></a-box>
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="2 2.5 0" ></a-box>
+
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="0 0.5 0" ></a-box>
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="0 2.5 0" ></a-box>
+      <a-box width="2" height="1" depth="0.1" color="blue" opacity="0.2" position="0 1.5 0" ></a-box>
+  </a-entity>
+  <a-entity class="wall" position="0 0 -6">
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="-2 0.5 0" ></a-box>
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="-2 1.5 0" ></a-box>
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="-2 2.5 0" ></a-box>
+
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="2 0.5 0" ></a-box>
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="2 1.5 0" ></a-box>
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="2 2.5 0" ></a-box>
+
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="0 0.5 0" ></a-box>
+    <a-box src="#wood" width="2" height="1" depth="0.1" position="0 2.5 0" ></a-box>
+      <a-box width="2" height="1" depth="0.1" color="blue" opacity="0.2" position="0 1.5 0" ></a-box>
+  </a-entity>
+  <a-cone src="#roof" position="0 4 -3" rotation="0 45 0" segments-radial="4" scale="5 2 5" color="#f79760"></a-cone>
+  <a-box src="#door" width="1.8" height="2.5" depth="0.1" position="-0.150 1.25 0.3" rotation="0 -20 0" ></a-box>
+  <a-box position="0 0 -3.000" width="6" depth="6" height="0.1" color="grey"></a-box>
+<a-entity id="fence" >    
+  <a-gltf-model src="#fence" scale="300 300 300" position="-4 0 0" rotation="0 90 0"></a-gltf-model>
+  <a-gltf-model src="#fence" scale="300 300 300" position="-4 0 -3" rotation="0 90 0"></a-gltf-model>
+  <a-gltf-model src="#fence" scale="300 300 300" position="-4 0 -6" rotation="0 90 0"></a-gltf-model>
+  <a-gltf-model src="#fence" scale="300 300 300" position="-4 0 -9" rotation="0 90 0"></a-gltf-model>
+  <a-gltf-model src="#fence" scale="300 300 300" position="-2.8 0 -9.9" rotation="0 0 0"></a-gltf-model>
+  <a-gltf-model src="#fence" scale="300 300 300" position="0.3 0 -9.9" rotation="0 0 0"></a-gltf-model>
+  <a-gltf-model src="#fence" scale="300 300 300" position="3.5 0 -9.9" rotation="0 0 0"></a-gltf-model>
+  <a-gltf-model src="#fence" scale="300 300 300" position="6.5 0 -9.9" rotation="0 0 0"></a-gltf-model>
+  <a-gltf-model src="#fence" scale="300 300 300" position="8.5 0 0" rotation="0 90 0"></a-gltf-model>
+  <a-gltf-model src="#fence" scale="300 300 300" position="8.5 0 -3" rotation="0 90 0"></a-gltf-model>
+  <a-gltf-model src="#fence" scale="300 300 300" position="8.5 0 -6" rotation="0 90 0"></a-gltf-model>
+  <a-gltf-model src="#fence" scale="300 300 300" position="8.5 0 -9" rotation="0 90 0"></a-gltf-model>
+</a-entity>
+</a-entity>
+
+
+
+
+
+
+
+
+<!-- Road -->
+      <a-box static-body position = "0 0.01 50" rotation="-90 0 0" width = "200" height = "30", depth = "0.5" color="gray"></a-box>
+        <a-entity id="paint">
+
+          <a-plane position = "70 0.51 50" rotation="-90 0 0" width = "10" height = "2", color="white"></a-plane>
+          <a-plane position = "50 0.51 50" rotation="-90 0 0" width = "10" height = "2", color="white"></a-plane>
+          <a-plane position = "30 0.51 50" rotation="-90 0 0" width = "10" height = "2", color="white"></a-plane>
+          <a-plane position = "10 0.51 50" rotation="-90 0 0" width = "10" height = "2", color="white"></a-plane>
+          <a-plane position = "-10 0.51 50" rotation="-90 0 0" width = "10" height = "2", color="white"></a-plane>
+          <a-plane position = "-30 0.51 50" rotation="-90 0 0" width = "10" height = "2", color="white"></a-plane>
+          <a-plane position = "-50 0.51 50" rotation="-90 0 0" width = "10" height = "2", color="white"></a-plane>
+          <a-plane position = "-70 0.51 50" rotation="-90 0 0" width = "10" height = "2", color="white"></a-plane>
+        </a-entity>
+
+
+
+        
+<!-- Sidewalks -->
+        <a-entity static-body id="Sidewalk" position="-40 0 0">
+          <a-entity id="bblock" position="0 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="10 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="20 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="30 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="40 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="50 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="60 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="70 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="80 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="90 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          
+        </a-entity>
+        <a-entity static-body id="Sidewalk2" position="-40 0 30">
+          <a-entity id="bblock" position="0 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="10 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="20 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="30 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="40 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="50 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="60 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="70 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="80 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="90 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          
+        </a-entity>
+        <a-entity static-body id="Sidewalk3" position="-75 0 25" rotation="0 90 0">
+          <a-entity id="bblock" position="0 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="10 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="20 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="30 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="40 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="50 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="60 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="70 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="80 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="90 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          
+        </a-entity>
+        <a-entity static-body id="Sidewalk4" position="15 0 25" rotation="0 90 0">
+          <a-entity id="bblock" position="0 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="10 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="20 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="30 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="40 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="50 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="60 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="70 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="80 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          <a-entity id="bblock" position="90 0 35" scale="10 1 10">
+            <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+            <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+          </a-entity>
+          
+        </a-entity>
+<!-- Sidewalk extra -->
+<a-entity static-body id="Sidewalkex" position="60 0 0">
+  <a-entity id="bblock" position="0 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="10 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="20 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="30 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="40 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="50 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="60 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="70 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="80 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="90 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  
+</a-entity>
+<a-entity static-body id="Sidewalkex2" position="60 0 30">
+  <a-entity id="bblock" position="0 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="10 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="20 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="30 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="40 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="50 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="60 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="70 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="80 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="90 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  
+</a-entity>
+<a-entity static-body id="Sidewalkex3" position="-140 0 0">
+  <a-entity id="bblock" position="0 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="10 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="20 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="30 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="40 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="50 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="60 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="70 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="80 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="90 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  
+</a-entity>
+<a-entity static-body id="Sidewalkex4" position="-140 0 30">
+  <a-entity id="bblock" position="0 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="10 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="20 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="30 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="40 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="50 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="60 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="70 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="80 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="90 0 35" scale="10 1 10">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="#FFF"></a-box>
+  </a-entity>
+  
+</a-entity>
+<!-- Grass -->
+<a-entity id="Grass">
+<a-entity static-body id="Grassrow1" position="-27 -0.5 -13">
+  <a-entity id="bblock" position="0 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="darkgreen"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="16 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="green"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="32 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="darkgreen"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="48 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="green"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="64 0 35" scale="16 1 16">
+      <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0 0.5 0" depth="1" height="1" width="1" color="darkgreen"></a-box>
+  </a-entity>
+</a-entity>
+<a-entity static-body id="Grassrow2" position="-27 -0.5 -29">
+  <a-entity id="bblock" position="0 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="green"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="16 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="darkgreen"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="32 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="green"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="48 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="darkgreen"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="64 0 35" scale="16 1 16">
+      <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0 0.5 0" depth="1" height="1" width="1" color="green"></a-box>
+  </a-entity>
+</a-entity>
+<a-entity static-body id="Grassrow3" position="-27 -0.5 -45">
+  <a-entity id="bblock" position="0 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="darkgreen"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="16 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="green"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="32 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="darkgreen"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="48 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="green"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="64 0 35" scale="16 1 16">
+      <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0 0.5 0" depth="1" height="1" width="1" color="darkgreen"></a-box>
+  </a-entity>
+</a-entity>
+<a-entity static-body id="Grassrow4" position="-27 -0.5 -61">
+  <a-entity id="bblock" position="0 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="green"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="16 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="darkgreen"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="32 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="green"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="48 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="darkgreen"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="64 0 35" scale="16 1 16">
+      <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0 0.5 0" depth="1" height="1" width="1" color="green"></a-box>
+  </a-entity>
+</a-entity>
+<a-entity static-body id="Grassrow5" position="-27 -0.5 -77">
+  <a-entity id="bblock" position="0 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="darkgreen"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="16 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="green"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="32 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="darkgreen"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="48 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="green"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="64 0 35" scale="16 1 16">
+      <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0 0.5 0" depth="1" height="1" width="1" color="darkgreen"></a-box>
+  </a-entity>
+</a-entity>
+<a-entity static-body id="Grassrow6" position="-27 -0.5 -93">
+  <a-entity id="bblock" position="0 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="green"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="16 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="darkgreen"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="32 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="green"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="48 0 35" scale="16 1 16">
+    <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+    <a-box position="0 0.5 0" depth="1" height="1" width="1" color="darkgreen"></a-box>
+  </a-entity>
+  <a-entity id="bblock" position="64 0 35" scale="16 1 16">
+      <a-box position="0 1 0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0 1 -0.5" rotation="0 90 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="-0.5 1 0" rotation="0 180 0" depth="1" height="0.01" width="0.01" color="Black"></a-box>
+      <a-box position="0 0.5 0" depth="1" height="1" width="1" color="green"></a-box>
+  </a-entity>
+</a-entity>
+</a-entity>
+
+
+
+
+
+
+<a-box dynamic-body="shape: box;" position="0 3 0" width="1" height="1" depth="1" color="#FFC65D"></a-box>
+<a-sphere dynamic-body="shape: sphere;" position="2 3 0" radius="0.5" color="#EF2D5E"></a-sphere>
+<a-cylinder dynamic-body="shape: cylinder;" position="-2 3 0" radius="0.5" height="1" color="#4CC3D9"></a-cylinder>
+
+
+
+
+
+
+
+
+
+      <a-sky></a-sky>
+      <a-entity id="cameraRig" movement-controls="fly: true; speed: 0.7" position="0 1 35">
+        <a-camera id="camera" kinema-body="radius: 0.8"> 
+          <a-cursor>
+          </a-cursor>
+        </a-camera>  
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
