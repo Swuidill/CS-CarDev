@@ -1,37 +1,43 @@
 let rnd = (l,u) => Math.random()*(u-l)+l;
 let envs = ["contact", "egypt", "checkerboard", "forest", "goaland", "yavapai", "goldmine", "threetowers", "poison", "arches", "tron", "japan", "dream", "volcano", "starry", "osiris", "moon"]
-let coins = [], peashooters = [], cursor, camera;
+let cars = [], peashooters = [], cursor, camera;
 
 window.onload = function(){
   scene = document.querySelector("a-scene");
   camera = document.querySelector("a-camera");
 
-  for(let i = 0; i < 120; i++){
-    let x = rnd(-200,200);;
-    let z = rnd(-50,100);
-    coins.push( new Coin(x,0.2,z) );
+  for(let i = 0; i < 4; i++){
+    cars.push(new Car(-10, 0, -5 + (i * 3)));
   }
 
-  for(let i = 0; i < 5; i++) {
-    peashooters.push(new Peashooter(-25 + (i * 8), 0.5, -40)); // Z changed from -100 to -40
+
+  for(let i = 0; i < 4; i++) {
+    peashooters.push(new Peashooter(-8, 0.5, -5 + (i * 3))); // Z changed from -100 to -40
   }
 
   loop();
 }
 
 function loop(){
-  for(coin of coins){
-    coin.spin();
-    if(coin.visible && distance(coin.obj, camera) < 1){
-      coin.collect();
-      }
-  }
   
   peashooters.forEach(ps => {
     ps.peas = ps.peas.filter(pea => pea.obj.parentNode);
     ps.peas.forEach(pea => pea.update());
   });
 
+  cars.forEach(car => {
+    // Check only horizontal (X/Z) distance
+    const carPos = car.obj.object3D.position;
+    const camPos = camera.object3D.position;
+    const dx = carPos.x - camPos.x;
+    const dz = carPos.z - camPos.z;
+    const horizontalDistance = Math.sqrt(dx*dx + dz*dz);
+    
+    if(horizontalDistance < 2) car.moving = true;
+    else car.moving = false;  // Add this to stop when moving away
+    
+    car.update();
+  });
 
   window.requestAnimationFrame( loop );
 }
