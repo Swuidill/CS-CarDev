@@ -8,7 +8,7 @@ class Peashooter{
         this.peas = [];
         setInterval(() => {
             // Shoot forward (0 radians instead of Math.PI)
-            this.peas.push(new Pea(x, y, z, 0));
+            this.peas.push(new Pea(x, y, z, Math.PI/2));
         }, 1000);
     }
 }
